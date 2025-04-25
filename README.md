@@ -1,2 +1,2 @@
-# Automa-o-de-Testes-de-Software
-Automação de Testes de Software
+# Automaçao-de-Testes-de-Software
+Automaçao-de-Testes-de-Software
