@@ -1,0 +1,134 @@
+[
+    {
+        "label": "Medida",
+        "importPath": "src.medidas",
+        "description": "src.medidas",
+        "isExtraImport": true,
+        "detail": "src.medidas",
+        "documentation": {}
+    },
+    {
+        "label": "Calcular_area",
+        "importPath": "src.Calcular_area",
+        "description": "src.Calcular_area",
+        "isExtraImport": true,
+        "detail": "src.Calcular_area",
+        "documentation": {}
+    },
+    {
+        "label": "cubo",
+        "importPath": "funcoes",
+        "description": "funcoes",
+        "isExtraImport": true,
+        "detail": "funcoes",
+        "documentation": {}
+    },
+    {
+        "label": "lado",
+        "kind": 5,
+        "importPath": "Exercicio 01..vscode.app.main",
+        "description": "Exercicio 01..vscode.app.main",
+        "peekOfCode": "lado = 3\nvolume = lado ** 3\ncubo = Cubo(volume, lado)\ncalculo = CalcularArea(\"metragem\", cubo)\nprint(f\"Lado do cubo: {cubo.get_lado()} m\")\nprint(f\"Volume do cubo: {calculo.calcular_volume()} m³\")\nprint(f\"Área da superfície do cubo: {calculo.calcular_area()} m²\")",
+        "detail": "Exercicio 01..vscode.app.main",
+        "documentation": {}
+    },
+    {
+        "label": "volume",
+        "kind": 5,
+        "importPath": "Exercicio 01..vscode.app.main",
+        "description": "Exercicio 01..vscode.app.main",
+        "peekOfCode": "volume = lado ** 3\ncubo = Cubo(volume, lado)\ncalculo = CalcularArea(\"metragem\", cubo)\nprint(f\"Lado do cubo: {cubo.get_lado()} m\")\nprint(f\"Volume do cubo: {calculo.calcular_volume()} m³\")\nprint(f\"Área da superfície do cubo: {calculo.calcular_area()} m²\")",
+        "detail": "Exercicio 01..vscode.app.main",
+        "documentation": {}
+    },
+    {
+        "label": "cubo",
+        "kind": 5,
+        "importPath": "Exercicio 01..vscode.app.main",
+        "description": "Exercicio 01..vscode.app.main",
+        "peekOfCode": "cubo = Cubo(volume, lado)\ncalculo = CalcularArea(\"metragem\", cubo)\nprint(f\"Lado do cubo: {cubo.get_lado()} m\")\nprint(f\"Volume do cubo: {calculo.calcular_volume()} m³\")\nprint(f\"Área da superfície do cubo: {calculo.calcular_area()} m²\")",
+        "detail": "Exercicio 01..vscode.app.main",
+        "documentation": {}
+    },
+    {
+        "label": "calculo",
+        "kind": 5,
+        "importPath": "Exercicio 01..vscode.app.main",
+        "description": "Exercicio 01..vscode.app.main",
+        "peekOfCode": "calculo = CalcularArea(\"metragem\", cubo)\nprint(f\"Lado do cubo: {cubo.get_lado()} m\")\nprint(f\"Volume do cubo: {calculo.calcular_volume()} m³\")\nprint(f\"Área da superfície do cubo: {calculo.calcular_area()} m²\")",
+        "detail": "Exercicio 01..vscode.app.main",
+        "documentation": {}
+    },
+    {
+        "label": "Calcular_area",
+        "kind": 6,
+        "importPath": "Exercicio 01.src.calcular_area",
+        "description": "Exercicio 01.src.calcular_area",
+        "peekOfCode": "class Calcular_area():\n    def __init__(self,metrica,medidas):\n        self.metrica = metrica\n        self.medidas = medidas\n    def calcular_area(self):\n        self.medidas = 6 * (self.medidas.get_lado() ** 2)\n        return self.medidas\n    def calcular_volume(self):\n        lado = self.medidas.get_lado()\n        return lado ** 3",
+        "detail": "Exercicio 01.src.calcular_area",
+        "documentation": {}
+    },
+    {
+        "label": "cubo",
+        "kind": 2,
+        "importPath": "Exercicio 01.src.funcoes",
+        "description": "Exercicio 01.src.funcoes",
+        "peekOfCode": "def cubo(x):\n    return x * x * x",
+        "detail": "Exercicio 01.src.funcoes",
+        "documentation": {}
+    },
+    {
+        "label": "Medida",
+        "kind": 6,
+        "importPath": "Exercicio 01.src.medidas",
+        "description": "Exercicio 01.src.medidas",
+        "peekOfCode": "class Medida():\n    def __init__(self,volume,lado):\n        self.__lado = lado\n        self.__volume = volume\n    def get_volume(self) -> int:  \n        return self.__volume \n    def get_lado(self) -> int:\n        return self.__lado",
+        "detail": "Exercicio 01.src.medidas",
+        "documentation": {}
+    },
+    {
+        "label": "test_CT0001",
+        "kind": 2,
+        "importPath": "Exercicio 01.testes.test_funcoes",
+        "description": "Exercicio 01.testes.test_funcoes",
+        "peekOfCode": "def test_CT0001():\n    assert cubo(0) == 0\ndef test_CT0002():\n    assert cubo(1) == 1\ndef test_CT0003():\n    assert cubo(2) == 8\ndef test_CT0004():\n    assert cubo(-2) == -8\ndef test_CT0005():\n    assert cubo(10) == 1000",
+        "detail": "Exercicio 01.testes.test_funcoes",
+        "documentation": {}
+    },
+    {
+        "label": "test_CT0002",
+        "kind": 2,
+        "importPath": "Exercicio 01.testes.test_funcoes",
+        "description": "Exercicio 01.testes.test_funcoes",
+        "peekOfCode": "def test_CT0002():\n    assert cubo(1) == 1\ndef test_CT0003():\n    assert cubo(2) == 8\ndef test_CT0004():\n    assert cubo(-2) == -8\ndef test_CT0005():\n    assert cubo(10) == 1000",
+        "detail": "Exercicio 01.testes.test_funcoes",
+        "documentation": {}
+    },
+    {
+        "label": "test_CT0003",
+        "kind": 2,
+        "importPath": "Exercicio 01.testes.test_funcoes",
+        "description": "Exercicio 01.testes.test_funcoes",
+        "peekOfCode": "def test_CT0003():\n    assert cubo(2) == 8\ndef test_CT0004():\n    assert cubo(-2) == -8\ndef test_CT0005():\n    assert cubo(10) == 1000",
+        "detail": "Exercicio 01.testes.test_funcoes",
+        "documentation": {}
+    },
+    {
+        "label": "test_CT0004",
+        "kind": 2,
+        "importPath": "Exercicio 01.testes.test_funcoes",
+        "description": "Exercicio 01.testes.test_funcoes",
+        "peekOfCode": "def test_CT0004():\n    assert cubo(-2) == -8\ndef test_CT0005():\n    assert cubo(10) == 1000",
+        "detail": "Exercicio 01.testes.test_funcoes",
+        "documentation": {}
+    },
+    {
+        "label": "test_CT0005",
+        "kind": 2,
+        "importPath": "Exercicio 01.testes.test_funcoes",
+        "description": "Exercicio 01.testes.test_funcoes",
+        "peekOfCode": "def test_CT0005():\n    assert cubo(10) == 1000",
+        "detail": "Exercicio 01.testes.test_funcoes",
+        "documentation": {}
+    }
+]
