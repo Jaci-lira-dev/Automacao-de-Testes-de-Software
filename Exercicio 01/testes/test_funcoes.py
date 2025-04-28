@@ -1,5 +1,4 @@
-
-from funcoes import cubo
+from src.funcoes import cubo
 
 def test_CT0001():
     assert cubo(0) == 0

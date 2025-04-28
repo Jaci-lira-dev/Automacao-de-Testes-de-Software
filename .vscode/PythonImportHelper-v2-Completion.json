@@ -8,6 +8,22 @@
         "documentation": {}
     },
     {
+        "label": "Medida",
+        "importPath": "src.medidas",
+        "description": "src.medidas",
+        "isExtraImport": true,
+        "detail": "src.medidas",
+        "documentation": {}
+    },
+    {
+        "label": "Medida",
+        "importPath": "src.medidas",
+        "description": "src.medidas",
+        "isExtraImport": true,
+        "detail": "src.medidas",
+        "documentation": {}
+    },
+    {
         "label": "Calcular_area",
         "importPath": "src.Calcular_area",
         "description": "src.Calcular_area",
@@ -16,11 +32,62 @@
         "documentation": {}
     },
     {
-        "label": "cubo",
-        "importPath": "funcoes",
-        "description": "funcoes",
+        "label": "Calcular_area",
+        "importPath": "src.calcular_area",
+        "description": "src.calcular_area",
         "isExtraImport": true,
-        "detail": "funcoes",
+        "detail": "src.calcular_area",
+        "documentation": {}
+    },
+    {
+        "label": "cubo",
+        "importPath": "src.funcoes",
+        "description": "src.funcoes",
+        "isExtraImport": true,
+        "detail": "src.funcoes",
+        "documentation": {}
+    },
+    {
+        "label": "sys",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "sys",
+        "description": "sys",
+        "detail": "sys",
+        "documentation": {}
+    },
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "unittest",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "unittest",
+        "description": "unittest",
+        "detail": "unittest",
+        "documentation": {}
+    },
+    {
+        "label": "MagicMock",
+        "importPath": "unittest.mock",
+        "description": "unittest.mock",
+        "isExtraImport": true,
+        "detail": "unittest.mock",
+        "documentation": {}
+    },
+    {
+        "label": "VendaDiBastos",
+        "importPath": "venda_dibastos",
+        "description": "venda_dibastos",
+        "isExtraImport": true,
+        "detail": "venda_dibastos",
         "documentation": {}
     },
     {
@@ -64,7 +131,7 @@
         "kind": 6,
         "importPath": "Exercicio 01.src.calcular_area",
         "description": "Exercicio 01.src.calcular_area",
-        "peekOfCode": "class Calcular_area():\n    def __init__(self,metrica,medidas):\n        self.metrica = metrica\n        self.medidas = medidas\n    def calcular_area(self):\n        self.medidas = 6 * (self.medidas.get_lado() ** 2)\n        return self.medidas\n    def calcular_volume(self):\n        lado = self.medidas.get_lado()\n        return lado ** 3",
+        "peekOfCode": "class Calcular_area():\n    def __init__(self, metrica, medidas):\n        self.metrica = metrica\n        self.medidas = medidas\n    def calcular_area(self):\n        return 6 * (self.medidas.get_lado() ** 2)\n    def calcular_volume(self):\n        lado = self.medidas.get_lado()\n        return lado ** 3",
         "detail": "Exercicio 01.src.calcular_area",
         "documentation": {}
     },
@@ -84,6 +151,33 @@
         "description": "Exercicio 01.src.medidas",
         "peekOfCode": "class Medida():\n    def __init__(self,volume,lado):\n        self.__lado = lado\n        self.__volume = volume\n    def get_volume(self) -> int:  \n        return self.__volume \n    def get_lado(self) -> int:\n        return self.__lado",
         "detail": "Exercicio 01.src.medidas",
+        "documentation": {}
+    },
+    {
+        "label": "test_CT0009",
+        "kind": 2,
+        "importPath": "Exercicio 01.testes.test_calcular_area",
+        "description": "Exercicio 01.testes.test_calcular_area",
+        "peekOfCode": "def test_CT0009():\n    medida = Medida(volume=0, lado=0)\n    calc = Calcular_area(metrica='cubo', medidas=medida)\n    assert calc.calcular_area() == 0\ndef test_CT0010():\n    medida = Medida(volume=27, lado=3)\n    calc = Calcular_area(metrica='cubo', medidas=medida)\n    assert calc.calcular_area() == 6 * (3 ** 2)  # 6 * 9 = 54\ndef test_CT0011():\n    medida = Medida(volume=64, lado=4)",
+        "detail": "Exercicio 01.testes.test_calcular_area",
+        "documentation": {}
+    },
+    {
+        "label": "test_CT0010",
+        "kind": 2,
+        "importPath": "Exercicio 01.testes.test_calcular_area",
+        "description": "Exercicio 01.testes.test_calcular_area",
+        "peekOfCode": "def test_CT0010():\n    medida = Medida(volume=27, lado=3)\n    calc = Calcular_area(metrica='cubo', medidas=medida)\n    assert calc.calcular_area() == 6 * (3 ** 2)  # 6 * 9 = 54\ndef test_CT0011():\n    medida = Medida(volume=64, lado=4)\n    calc = Calcular_area(metrica='cubo', medidas=medida)\n    assert calc.calcular_area() == 6 * (4 ** 2)  # 6 * 16 = 96",
+        "detail": "Exercicio 01.testes.test_calcular_area",
+        "documentation": {}
+    },
+    {
+        "label": "test_CT0011",
+        "kind": 2,
+        "importPath": "Exercicio 01.testes.test_calcular_area",
+        "description": "Exercicio 01.testes.test_calcular_area",
+        "peekOfCode": "def test_CT0011():\n    medida = Medida(volume=64, lado=4)\n    calc = Calcular_area(metrica='cubo', medidas=medida)\n    assert calc.calcular_area() == 6 * (4 ** 2)  # 6 * 16 = 96",
+        "detail": "Exercicio 01.testes.test_calcular_area",
         "documentation": {}
     },
     {
@@ -129,6 +223,51 @@
         "description": "Exercicio 01.testes.test_funcoes",
         "peekOfCode": "def test_CT0005():\n    assert cubo(10) == 1000",
         "detail": "Exercicio 01.testes.test_funcoes",
+        "documentation": {}
+    },
+    {
+        "label": "test_CT0006",
+        "kind": 2,
+        "importPath": "Exercicio 01.testes.test_medidas",
+        "description": "Exercicio 01.testes.test_medidas",
+        "peekOfCode": "def test_CT0006():\n    medida = Medida(volume=0, lado=0)\n    assert medida.get_lado() == 0\n    assert medida.get_volume() == 0\ndef test_CT0007():\n    medida = Medida(volume=8, lado=2)\n    assert medida.get_lado() == 2\n    assert medida.get_volume() == 8\ndef test_CT0008():\n    medida = Medida(volume=27, lado=3)",
+        "detail": "Exercicio 01.testes.test_medidas",
+        "documentation": {}
+    },
+    {
+        "label": "test_CT0007",
+        "kind": 2,
+        "importPath": "Exercicio 01.testes.test_medidas",
+        "description": "Exercicio 01.testes.test_medidas",
+        "peekOfCode": "def test_CT0007():\n    medida = Medida(volume=8, lado=2)\n    assert medida.get_lado() == 2\n    assert medida.get_volume() == 8\ndef test_CT0008():\n    medida = Medida(volume=27, lado=3)\n    assert medida.get_lado() == 3\n    assert medida.get_volume() == 27",
+        "detail": "Exercicio 01.testes.test_medidas",
+        "documentation": {}
+    },
+    {
+        "label": "test_CT0008",
+        "kind": 2,
+        "importPath": "Exercicio 01.testes.test_medidas",
+        "description": "Exercicio 01.testes.test_medidas",
+        "peekOfCode": "def test_CT0008():\n    medida = Medida(volume=27, lado=3)\n    assert medida.get_lado() == 3\n    assert medida.get_volume() == 27",
+        "detail": "Exercicio 01.testes.test_medidas",
+        "documentation": {}
+    },
+    {
+        "label": "VendaDiBastos",
+        "kind": 6,
+        "importPath": "Exercicio 02.src.venda_dibastos",
+        "description": "Exercicio 02.src.venda_dibastos",
+        "peekOfCode": "class VendaDiBastos:\n    def __init__(self, estoque, pagamento, entrega, email):\n        self.estoque = estoque\n        self.pagamento = pagamento\n        self.entrega = entrega\n        self.email = email\n        self.itens = []\n        self.total = 0\n    def adicionar_produto(self, nome_produto, quantidade=1):\n        produto = self.estoque.verificar_produto(nome_produto)",
+        "detail": "Exercicio 02.src.venda_dibastos",
+        "documentation": {}
+    },
+    {
+        "label": "TestVendaDiBastos",
+        "kind": 6,
+        "importPath": "Exercicio 02.tests.test_venda_dibastos",
+        "description": "Exercicio 02.tests.test_venda_dibastos",
+        "peekOfCode": "class TestVendaDiBastos(unittest.TestCase):\n    def test_venda_produtos_confeitaria(self):\n        mock_estoque = MagicMock()\n        mock_pagamento = MagicMock()\n        mock_entrega = MagicMock()\n        mock_email = MagicMock()\n        # Definindo o comportamento simulado para o estoque\n        mock_estoque.verificar_produto.side_effect = lambda nome: {\n            'Bolo de Chocolate': {'preco': 50.0, 'quantidade': 10},\n            'Torta de Limão': {'preco': 40.0, 'quantidade': 5},",
+        "detail": "Exercicio 02.tests.test_venda_dibastos",
         "documentation": {}
     }
 ]
