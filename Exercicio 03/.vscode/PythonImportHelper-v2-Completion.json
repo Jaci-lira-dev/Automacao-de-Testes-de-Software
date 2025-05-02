@@ -1,0 +1,115 @@
+[
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "fixture",
+        "importPath": "pytest",
+        "description": "pytest",
+        "isExtraImport": true,
+        "detail": "pytest",
+        "documentation": {}
+    },
+    {
+        "label": "webdriver",
+        "importPath": "selenium",
+        "description": "selenium",
+        "isExtraImport": true,
+        "detail": "selenium",
+        "documentation": {}
+    },
+    {
+        "label": "webdriver",
+        "importPath": "selenium",
+        "description": "selenium",
+        "isExtraImport": true,
+        "detail": "selenium",
+        "documentation": {}
+    },
+    {
+        "label": "time",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "time",
+        "description": "time",
+        "detail": "time",
+        "documentation": {}
+    },
+    {
+        "label": "By",
+        "importPath": "selenium.webdriver.common.by",
+        "description": "selenium.webdriver.common.by",
+        "isExtraImport": true,
+        "detail": "selenium.webdriver.common.by",
+        "documentation": {}
+    },
+    {
+        "label": "form_cliente",
+        "kind": 2,
+        "importPath": "tests.conftest",
+        "description": "tests.conftest",
+        "peekOfCode": "def form_cliente():\n    chrome = webdriver.Chrome()\n    pasta = os.path.dirname(os.path.realpath(__file__))\n    local_path = f'file://{pasta}/../app/template/'\n    chrome.get(f'{local_path}cliente.html')\n    yield chrome\n    chrome.close()",
+        "detail": "tests.conftest",
+        "documentation": {}
+    },
+    {
+        "label": "test_localizar_campo_nome",
+        "kind": 2,
+        "importPath": "tests.test_form_cliente",
+        "description": "tests.test_form_cliente",
+        "peekOfCode": "def test_localizar_campo_nome(form_cliente):\n    campo_nome = form_cliente.find_element(By.NAME, 'nome_cliente')\n    assert campo_nome.tag_name == 'input'\n    assert campo_nome.get_attribute('placeholder') == 'nome do cliente'\n    assert campo_nome.get_attribute('type') == 'text'\n    time.sleep(8)\ndef test_localizar_campo_email(form_cliente):\n    campo_email = form_cliente.find_element(By.NAME, 'email')\n    assert campo_email.tag_name == 'input'\n    assert campo_email.get_attribute('placeholder') == 'e-mail'",
+        "detail": "tests.test_form_cliente",
+        "documentation": {}
+    },
+    {
+        "label": "test_localizar_campo_email",
+        "kind": 2,
+        "importPath": "tests.test_form_cliente",
+        "description": "tests.test_form_cliente",
+        "peekOfCode": "def test_localizar_campo_email(form_cliente):\n    campo_email = form_cliente.find_element(By.NAME, 'email')\n    assert campo_email.tag_name == 'input'\n    assert campo_email.get_attribute('placeholder') == 'e-mail'\n    assert campo_email.get_attribute('type') == 'email'\n    time.sleep(8)\ndef test_localizar_campo_login(form_cliente):\n    campo_login = form_cliente.find_element(By.NAME, 'login')\n    assert campo_login.tag_name == 'input'\n    assert campo_login.get_attribute('type') == 'submit'",
+        "detail": "tests.test_form_cliente",
+        "documentation": {}
+    },
+    {
+        "label": "test_localizar_campo_login",
+        "kind": 2,
+        "importPath": "tests.test_form_cliente",
+        "description": "tests.test_form_cliente",
+        "peekOfCode": "def test_localizar_campo_login(form_cliente):\n    campo_login = form_cliente.find_element(By.NAME, 'login')\n    assert campo_login.tag_name == 'input'\n    assert campo_login.get_attribute('type') == 'submit'\n    assert campo_login.get_attribute('value') == 'Login'\n    time.sleep(8)\ndef cliente(form_cliente):\n    form_cliente = form_cliente.find_element(By.ID, 'FormClienteCliente')\n    assert form_cliente.tag_name == 'form'\n    time.sleep(8)",
+        "detail": "tests.test_form_cliente",
+        "documentation": {}
+    },
+    {
+        "label": "test_localizar_form_cliente",
+        "kind": 2,
+        "importPath": "tests.test_form_cliente",
+        "description": "tests.test_form_cliente",
+        "peekOfCode": "def test_localizar_form_cliente(form_cliente):\n    form_cliente = form_cliente.find_element(By.ID, 'FormCliente')\n    assert form_cliente.tag_name == 'form'\n    time.sleep(8)\ndef test_verificar_titulo_do_form(form_cliente):\n    assert form_cliente.title == 'Cadastro de cliente'\n    time.sleep(8)",
+        "detail": "tests.test_form_cliente",
+        "documentation": {}
+    },
+    {
+        "label": "test_verificar_titulo_do_form",
+        "kind": 2,
+        "importPath": "tests.test_form_cliente",
+        "description": "tests.test_form_cliente",
+        "peekOfCode": "def test_verificar_titulo_do_form(form_cliente):\n    assert form_cliente.title == 'Cadastro de cliente'\n    time.sleep(8)",
+        "detail": "tests.test_form_cliente",
+        "documentation": {}
+    },
+    {
+        "label": "chrome",
+        "kind": 5,
+        "importPath": "selenium_chrome",
+        "description": "selenium_chrome",
+        "peekOfCode": "chrome = webdriver.Chrome()\nchrome.get('http://google.com.br')\nchrome.maximize_window()\nprint ('Título', chrome.title)\nprint ('Endereço URL', chrome.current_url)\nprint ('Código Fonte', chrome.page_source[:100])\nchrome.close()",
+        "detail": "selenium_chrome",
+        "documentation": {}
+    }
+]

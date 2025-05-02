@@ -91,6 +91,71 @@
         "documentation": {}
     },
     {
+        "label": "fixture",
+        "importPath": "pytest",
+        "description": "pytest",
+        "isExtraImport": true,
+        "detail": "pytest",
+        "documentation": {}
+    },
+    {
+        "label": "webdriver",
+        "importPath": "selenium",
+        "description": "selenium",
+        "isExtraImport": true,
+        "detail": "selenium",
+        "documentation": {}
+    },
+    {
+        "label": "webdriver",
+        "importPath": "selenium",
+        "description": "selenium",
+        "isExtraImport": true,
+        "detail": "selenium",
+        "documentation": {}
+    },
+    {
+        "label": "time",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "time",
+        "description": "time",
+        "detail": "time",
+        "documentation": {}
+    },
+    {
+        "label": "By",
+        "importPath": "selenium.webdriver.common.by",
+        "description": "selenium.webdriver.common.by",
+        "isExtraImport": true,
+        "detail": "selenium.webdriver.common.by",
+        "documentation": {}
+    },
+    {
+        "label": "Service",
+        "importPath": "selenium.webdriver.chrome.service",
+        "description": "selenium.webdriver.chrome.service",
+        "isExtraImport": true,
+        "detail": "selenium.webdriver.chrome.service",
+        "documentation": {}
+    },
+    {
+        "label": "Options",
+        "importPath": "selenium.webdriver.chrome.options",
+        "description": "selenium.webdriver.chrome.options",
+        "isExtraImport": true,
+        "detail": "selenium.webdriver.chrome.options",
+        "documentation": {}
+    },
+    {
+        "label": "ChromeDriverManager",
+        "importPath": "webdriver_manager.chrome",
+        "description": "webdriver_manager.chrome",
+        "isExtraImport": true,
+        "detail": "webdriver_manager.chrome",
+        "documentation": {}
+    },
+    {
         "label": "lado",
         "kind": 5,
         "importPath": "Exercicio 01..vscode.app.main",
@@ -253,11 +318,20 @@
         "documentation": {}
     },
     {
+        "label": "EmailSMTP",
+        "kind": 6,
+        "importPath": "Exercicio 02.src.emailServico",
+        "description": "Exercicio 02.src.emailServico",
+        "peekOfCode": "class EmailSMTP:\n    def send_email(self, to, subject, body):\n        \"\"\"\n        Simula o envio de um e-mail.\n        Para fins de teste, retorna True como se o e-mail tivesse sido enviado com sucesso.\n        \"\"\"\n        print(f\"Enviando e-mail para {to} com o assunto '{subject}'\")\n        return True",
+        "detail": "Exercicio 02.src.emailServico",
+        "documentation": {}
+    },
+    {
         "label": "VendaDiBastos",
         "kind": 6,
         "importPath": "Exercicio 02.src.venda_dibastos",
         "description": "Exercicio 02.src.venda_dibastos",
-        "peekOfCode": "class VendaDiBastos:\n    def __init__(self, estoque, pagamento, entrega, email):\n        self.estoque = estoque\n        self.pagamento = pagamento\n        self.entrega = entrega\n        self.email = email\n        self.itens = []\n        self.total = 0\n    def adicionar_produto(self, nome_produto, quantidade=1):\n        produto = self.estoque.verificar_produto(nome_produto)",
+        "peekOfCode": "class VendaDiBastos:\n    def __init__(self, estoque, pagamento, entrega, email):\n        self.estoque = estoque\n        self.pagamento = pagamento\n        self.entrega = entrega\n        self.email = email\n        self.itens = []\n        self.total = 0.0\n    def adicionar_produto(self, nome_produto, quantidade):\n        produto = self.estoque.verificar_produto(nome_produto)",
         "detail": "Exercicio 02.src.venda_dibastos",
         "documentation": {}
     },
@@ -266,8 +340,89 @@
         "kind": 6,
         "importPath": "Exercicio 02.tests.test_venda_dibastos",
         "description": "Exercicio 02.tests.test_venda_dibastos",
-        "peekOfCode": "class TestVendaDiBastos(unittest.TestCase):\n    def test_venda_produtos_confeitaria(self):\n        mock_estoque = MagicMock()\n        mock_pagamento = MagicMock()\n        mock_entrega = MagicMock()\n        mock_email = MagicMock()\n        # Definindo o comportamento simulado para o estoque\n        mock_estoque.verificar_produto.side_effect = lambda nome: {\n            'Bolo de Chocolate': {'preco': 50.0, 'quantidade': 10},\n            'Torta de Limão': {'preco': 40.0, 'quantidade': 5},",
+        "peekOfCode": "class TestVendaDiBastos(unittest.TestCase):\n    def test_venda_produtos_confeitaria(self):\n        mock_estoque = MagicMock()\n        mock_pagamento = MagicMock()\n        mock_entrega = MagicMock()\n        mock_email = MagicMock()\n        # Mock dos produtos e estoque\n        mock_estoque.verificar_produto.side_effect = lambda nome: {\n            'Bolo de Chocolate': {'preco': 50.0, 'quantidade': 10},\n            'Torta de Limão': {'preco': 40.0, 'quantidade': 5},",
         "detail": "Exercicio 02.tests.test_venda_dibastos",
+        "documentation": {}
+    },
+    {
+        "label": "form_cliente",
+        "kind": 2,
+        "importPath": "Exercicio 03.tests.conftest",
+        "description": "Exercicio 03.tests.conftest",
+        "peekOfCode": "def form_cliente():\n    chrome = webdriver.Chrome()\n    pasta = os.path.dirname(os.path.realpath(__file__))\n    local_path = f'file://{pasta}/../app/template/'\n    chrome.get(f'{local_path}cliente.html')\n    yield chrome\n    chrome.close()",
+        "detail": "Exercicio 03.tests.conftest",
+        "documentation": {}
+    },
+    {
+        "label": "test_localizar_campo_nome",
+        "kind": 2,
+        "importPath": "Exercicio 03.tests.test_form_aluno",
+        "description": "Exercicio 03.tests.test_form_aluno",
+        "peekOfCode": "def test_localizar_campo_nome(form_cliente):\n    campo_nome = form_cliente.find_element(By.NAME, 'nome_cliente')\n    assert campo_nome.tag_name == 'input'\n    assert campo_nome.get_attribute('placeholder') == 'nome do cliente'\n    assert campo_nome.get_attribute('type') == 'text'\n    time.sleep(8)\ndef test_localizar_campo_email(form_cliente):\n    campo_email = form_cliente.find_element(By.NAME, 'email')\n    assert campo_email.tag_name == 'input'\n    assert campo_email.get_attribute('placeholder') == 'e-mail'",
+        "detail": "Exercicio 03.tests.test_form_aluno",
+        "documentation": {}
+    },
+    {
+        "label": "test_localizar_campo_email",
+        "kind": 2,
+        "importPath": "Exercicio 03.tests.test_form_aluno",
+        "description": "Exercicio 03.tests.test_form_aluno",
+        "peekOfCode": "def test_localizar_campo_email(form_cliente):\n    campo_email = form_cliente.find_element(By.NAME, 'email')\n    assert campo_email.tag_name == 'input'\n    assert campo_email.get_attribute('placeholder') == 'e-mail'\n    assert campo_email.get_attribute('type') == 'email'\n    time.sleep(8)\ndef test_localizar_campo_login(form_cliente):\n    campo_login = form_cliente.find_element(By.NAME, 'login')\n    assert campo_login.tag_name == 'input'\n    assert campo_login.get_attribute('type') == 'submit'",
+        "detail": "Exercicio 03.tests.test_form_aluno",
+        "documentation": {}
+    },
+    {
+        "label": "test_localizar_campo_login",
+        "kind": 2,
+        "importPath": "Exercicio 03.tests.test_form_aluno",
+        "description": "Exercicio 03.tests.test_form_aluno",
+        "peekOfCode": "def test_localizar_campo_login(form_cliente):\n    campo_login = form_cliente.find_element(By.NAME, 'login')\n    assert campo_login.tag_name == 'input'\n    assert campo_login.get_attribute('type') == 'submit'\n    assert campo_login.get_attribute('value') == 'Login'\n    time.sleep(8)\ndef test_localizar_form_cliente(form_cliente):\n    form_cliente = form_cliente.find_element(By.ID, 'FormCliente')\n    assert form_cliente.tag_name == 'form'\n    time.sleep(8)",
+        "detail": "Exercicio 03.tests.test_form_aluno",
+        "documentation": {}
+    },
+    {
+        "label": "test_localizar_form_cliente",
+        "kind": 2,
+        "importPath": "Exercicio 03.tests.test_form_aluno",
+        "description": "Exercicio 03.tests.test_form_aluno",
+        "peekOfCode": "def test_localizar_form_cliente(form_cliente):\n    form_cliente = form_cliente.find_element(By.ID, 'FormCliente')\n    assert form_cliente.tag_name == 'form'\n    time.sleep(8)\ndef test_verificar_titulo_do_form(form_cliente):\n    assert form_cliente.title == 'Cadastro de cliente'\n    time.sleep(8)",
+        "detail": "Exercicio 03.tests.test_form_aluno",
+        "documentation": {}
+    },
+    {
+        "label": "test_verificar_titulo_do_form",
+        "kind": 2,
+        "importPath": "Exercicio 03.tests.test_form_aluno",
+        "description": "Exercicio 03.tests.test_form_aluno",
+        "peekOfCode": "def test_verificar_titulo_do_form(form_cliente):\n    assert form_cliente.title == 'Cadastro de cliente'\n    time.sleep(8)",
+        "detail": "Exercicio 03.tests.test_form_aluno",
+        "documentation": {}
+    },
+    {
+        "label": "options",
+        "kind": 5,
+        "importPath": "Exercicio 03.selenium_chrome",
+        "description": "Exercicio 03.selenium_chrome",
+        "peekOfCode": "options = Options()\noptions.add_argument(\"--disable-features=NetworkService,NetworkServiceInProcess\")\noptions.add_argument(\"--no-sandbox\")\noptions.add_argument(\"--disable-dev-shm-usage\")\n# Inicializa o serviço e o driver do Chrome com as opções configuradas\nservice = Service(ChromeDriverManager().install())\ndriver = webdriver.Chrome(service=service, options=options)\n# Acessa o site\ndriver.get('http://google.com.br')\n# Maximiza a janela",
+        "detail": "Exercicio 03.selenium_chrome",
+        "documentation": {}
+    },
+    {
+        "label": "service",
+        "kind": 5,
+        "importPath": "Exercicio 03.selenium_chrome",
+        "description": "Exercicio 03.selenium_chrome",
+        "peekOfCode": "service = Service(ChromeDriverManager().install())\ndriver = webdriver.Chrome(service=service, options=options)\n# Acessa o site\ndriver.get('http://google.com.br')\n# Maximiza a janela\ndriver.maximize_window()\n# Imprime informações\nprint('Título:', driver.title)\nprint('Endereço URL:', driver.current_url)\nprint('Código Fonte (primeiros 100 caracteres):', driver.page_source[:100])",
+        "detail": "Exercicio 03.selenium_chrome",
+        "documentation": {}
+    },
+    {
+        "label": "driver",
+        "kind": 5,
+        "importPath": "Exercicio 03.selenium_chrome",
+        "description": "Exercicio 03.selenium_chrome",
+        "peekOfCode": "driver = webdriver.Chrome(service=service, options=options)\n# Acessa o site\ndriver.get('http://google.com.br')\n# Maximiza a janela\ndriver.maximize_window()\n# Imprime informações\nprint('Título:', driver.title)\nprint('Endereço URL:', driver.current_url)\nprint('Código Fonte (primeiros 100 caracteres):', driver.page_source[:100])\n# Fecha o navegador",
+        "detail": "Exercicio 03.selenium_chrome",
         "documentation": {}
     }
 ]

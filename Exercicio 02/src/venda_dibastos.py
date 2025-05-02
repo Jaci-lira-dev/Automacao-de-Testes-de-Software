@@ -1,5 +1,3 @@
-# src/venda_dibastos.py
-
 class VendaDiBastos:
     def __init__(self, estoque, pagamento, entrega, email):
         self.estoque = estoque
@@ -7,29 +5,26 @@ class VendaDiBastos:
         self.entrega = entrega
         self.email = email
         self.itens = []
-        self.total = 0
+        self.total = 0.0
 
-    def adicionar_produto(self, nome_produto, quantidade=1):
+    def adicionar_produto(self, nome_produto, quantidade):
         produto = self.estoque.verificar_produto(nome_produto)
         if produto and produto['quantidade'] >= quantidade:
-            self.itens.append((nome_produto, quantidade, produto['preco']))
-            self.total += produto['preco'] * quantidade
-        else:
-            raise Exception(f"Produto '{nome_produto}' indisponível ou quantidade insuficiente.")
+            preco_total = produto['preco'] * quantidade
+            self.itens.append((nome_produto, quantidade, preco_total))
+            self.total += preco_total
+            self.estoque.reduzir_estoque(nome_produto, quantidade)
 
     def finalizar_venda(self, cliente, endereco):
         if not self.itens:
             raise Exception("Nenhum produto no carrinho.")
-        
-        # Processando pagamento
+
         if self.pagamento.processar_pagamento(cliente, self.total):
-            # Reduzindo estoque
             for nome_produto, quantidade, _ in self.itens:
                 self.estoque.reduzir_estoque(nome_produto, quantidade)
-            
-            # Realizando entrega
+
             self.entrega.realizar_entrega(cliente, endereco)
-            
-            # Enviando confirmação via e-mail
-            mensagem = f"Olá {cliente}, sua compra na Confeitaria Di Bastos foi finalizada! Valor total: R${self.total}."
+
+            # Construindo a mensagem fictícia com correção para cliente e endereço como strings
+            mensagem = f"Produto: {nome_produto}; Cliente: {cliente}, Endereço: {endereco}; Confirmação: Sua compra na Confeitaria Di Bastos foi finalizada! Valor total: R${self.total}."
             self.email.enviar_confirmacao(cliente, mensagem)
