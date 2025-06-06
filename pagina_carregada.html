@@ -1,0 +1,80 @@
+<html lang="pt-BR"><head><script type="text/javascript" src="/___vscode_livepreview_injected_script"></script>
+    <meta charset="UTF-8">
+    <title>Avaliação disciplina automação de teste de software</title>
+    <link rel="stylesheet" href="css/estilo.css">
+    <script defer="">
+        document.addEventListener('DOMContentLoaded', () => {
+            // Preenche o select "nota" de 0 a 10
+            const notaSelect = document.getElementById('nota');
+            for (let i = 0; i <= 10; i++) {
+                const option = document.createElement('option');
+                option.value = i;
+                option.text = i;
+                notaSelect.appendChild(option);
+            }
+
+            // Trata o envio do formulário
+            const form = document.getElementById('form-avaliacao');
+            form.addEventListener('submit', (event) => {
+                event.preventDefault();
+
+                const nome = document.getElementById('nome').value.trim();
+                const ra = document.getElementById('ra').value.trim();
+                const dataNascimento = document.getElementById('data-nascimento').value;
+                const curso = document.getElementById('curso').value;
+                const nota = document.getElementById('nota').value;
+                const sugestoes = document.getElementById('sugestoes').value.trim();
+                const obs = document.getElementById('obs').value.trim();
+
+                if (!nome || !ra || !dataNascimento || !curso || !nota || !sugestoes) {
+                    alert('Por favor, preencha todos os campos obrigatórios.');
+                    return;
+                }
+
+                console.log('Formulário preenchido:', { nome, ra, dataNascimento, curso, nota, sugestoes, obs });
+
+                alert('Feedback enviado com sucesso!');
+                form.reset();
+            });
+        });
+    </script>
+    <script src="js/avaliacao.js" defer=""></script>
+
+</head>
+<body>
+    <h1>Avaliação disciplina automação de teste de software</h1>
+
+    <form id="form-avaliacao">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" required=""><br><br>
+
+        <label for="ra">RA:</label>
+        <input type="text" id="ra" name="ra" required=""><br><br>
+
+        <label for="data-nascimento">Data de Nascimento:</label>
+        <input type="date" id="data-nascimento" name="data-nascimento" required=""><br><br>
+
+        <label for="curso">Curso:</label>
+        <select id="curso" name="curso" required="">
+            <option value="" disabled="" selected="">Selecione o curso</option>
+            <option value="ads">Análise e Desenvolvimento de Sistemas</option>
+            <option value="si">Sistemas de Informação</option>
+        </select><br><br>
+
+        <label for="nota">Aproveitamento do conteúdo (0 a 10):</label>
+        <select id="nota" name="nota" required="">
+            <option value="" disabled="" selected="">Selecione a nota</option>
+            <!-- opções serão inseridas via JavaScript -->
+        <option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></select><br><br>
+
+        <label for="sugestoes">Sugestões de melhoria:</label><br>
+        <textarea id="sugestoes" name="sugestoes" rows="4" cols="50" required=""></textarea><br><br>
+
+        <label for="obs">Observações adicionais:</label><br>
+        <textarea id="obs" name="obs" rows="4" cols="50"></textarea><br><br>
+
+        <button type="submit">Enviar Feedback</button>
+    </form>
+
+
+</body></html>
